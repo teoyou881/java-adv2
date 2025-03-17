@@ -1,10 +1,15 @@
 package charset;
 
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.US_ASCII;
+import static java.nio.charset.StandardCharsets.UTF_16BE;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import static java.nio.charset.StandardCharsets.*;
 
 public class EncodingMain2 {
+
   private static final Charset EUC_KR = Charset.forName("EUC-KR");
   private static final Charset MS_949 = Charset.forName("MS949");
 
@@ -48,8 +53,7 @@ public class EncodingMain2 {
   private static void test(String text, Charset encodingCharset, Charset decodingCharset) {
     byte[] encoded = text.getBytes(encodingCharset);
     String decoded = new String(encoded, decodingCharset);
-    System.out.printf("%s -> [%s] Encoding -> %s %sbyte -> [%s] Decoding -> %s\n",
-        text, encodingCharset, Arrays.toString(encoded),
-        encoded.length, decodingCharset, decoded);
+    System.out.printf("%s -> [%s] Encoding -> %s %sbyte -> [%s] Decoding -> %s\n", text,
+        encodingCharset, Arrays.toString(encoded), encoded.length, decodingCharset, decoded);
   }
 }
