@@ -1,6 +1,7 @@
 package was.httpserver;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import was.httpserver.servlet.InternalErrorServlet;
@@ -33,7 +34,7 @@ public class ServletManager {
   }
 
   public void execute(HttpRequest request, HttpResponse response) throws
-      IOException {
+      IOException, InvocationTargetException, IllegalAccessException {
     try {
       HttpServlet servlet = servletMap.getOrDefault(request.getPath(), defaultServlet);
       if (servlet == null) {

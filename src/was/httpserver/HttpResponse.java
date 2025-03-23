@@ -53,5 +53,6 @@ public class HttpResponse {
   }
 
   public void setStatusCode(int i) {
+
   }
 }

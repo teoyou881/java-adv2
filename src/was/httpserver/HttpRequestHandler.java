@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.net.Socket;
 
 public class HttpRequestHandler implements Runnable {
@@ -29,7 +30,8 @@ public class HttpRequestHandler implements Runnable {
     }
   }
 
-  private void process(Socket socket) throws IOException {
+  private void process(Socket socket)
+      throws IOException, InvocationTargetException, IllegalAccessException {
     try (socket; BufferedReader reader = new BufferedReader(
         new InputStreamReader(socket.getInputStream(),
             UTF_8)); PrintWriter writer = new PrintWriter(socket.getOutputStream(), false, UTF_8)) {
