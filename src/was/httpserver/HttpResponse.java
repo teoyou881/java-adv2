@@ -51,4 +51,7 @@ public class HttpResponse {
         return "Unknown";
     }
   }
+
+  public void setStatusCode(int i) {
+  }
 }
