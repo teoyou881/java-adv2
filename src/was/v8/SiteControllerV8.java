@@ -26,4 +26,9 @@ public class SiteControllerV8 {
     response.writeBody("<h1>site2</h1>");
   }
 
+  //for checking duplicate
+//  @Mapping("/site2")
+//  public void site3(HttpResponse response) {
+//    response.writeBody("<h1>site2</h1>");
+//  }
 }
